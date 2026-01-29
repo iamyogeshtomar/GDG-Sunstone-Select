@@ -1,0 +1,9 @@
+.todos {
+  background-color: beige;
+  margin: 20px;
+  padding: 20px;
+  list-style-type: none;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}

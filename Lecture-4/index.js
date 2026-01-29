@@ -59,22 +59,17 @@
 //     space.appendChild(heading);
 // });
 
-
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const doubleMap = arr.map((num, i) => { return num * 2; });
 
-const evenMap = arr.filter((value) => {
-    if (value % 2 === 0) {
-        return value;
-    }
-});
+const evenMap = arr.filter((value) => { return value % 2 === 0; });
 
 const sum = arr.reduce((sum, value,) => { return value + sum; }, 50);
 
-const SR  = {
-    name:"ShrutiRanjan",
-    age:25,
-}
+const SR = {
+    name: "ShrutiRanjan",
+    age: 25,
+};
 
-// console.log(doubleMap);
+console.log(doubleMap);

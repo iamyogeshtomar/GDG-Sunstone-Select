@@ -18,10 +18,10 @@ const div = document.querySelector(".div");
 //     console.log(e.target);
 // }, { capture: true });
 
-// function callMsg(e) {
-//     e.stopPropagation();
-//     console.log(e.target);
-// }
+function callMsg(e) {
+    // e.stopPropagation();
+    console.log(e.target);
+}
 
 // function globalEventhandler(event, selector,callback) {
 //     selector.addEventListener(event, callback);
@@ -30,34 +30,34 @@ const div = document.querySelector(".div");
 // callMsg("click", div, callMsg);
 
 
-// div1.addEventListener("click", callMsg, { capture: true });
+div1.addEventListener("click", callMsg, { capture: true });
 
-// div2.addEventListener("click", callMsg, { capture: true });
+div2.addEventListener("click", callMsg, { capture: true });
 
-// div3.addEventListener("click", callMsg, { capture: true });
+div3.addEventListener("click", callMsg, { capture: true });
 
 
-function Person(name, age) {
-    this.name = name;
-    this.age = age;
-    this.checkThis = function () {
-        console.log(this);
-    };
-}
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.checkThis = function () {
+//         console.log(this);
+//     };
+// }
 
-const SR = new Person("SR", 23);
+// const SR = new Person("SR", 23);
 
-function getName(message) {
-    console.log(this.name);
-    console.log(message, this);
-}
+// function getName(message) {
+//     console.log(this.name);
+//     console.log(message, this);
+// }
 
 // getName.call(SR, "Hello World");
 
 // getName.apply(SR, ["Hello from apply"]);
 
 
-const checkName = getName.bind(SR, "Hello from bind");
+// const checkName = getName.bind(SR, "Hello from bind");
 
 // checkName();
 

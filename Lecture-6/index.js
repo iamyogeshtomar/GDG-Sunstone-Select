@@ -18,9 +18,10 @@ const div = document.querySelector(".div");
 //     console.log(e.target);
 // }, { capture: true });
 
-function callMsg(e) {
-    // e.stopPropagation();
-    console.log(e.target);
+function callMsg(e, element) {
+    if (e.target == element)
+        // e.stopPropagation();
+        console.log(e.target);
 }
 
 // function globalEventhandler(event, selector,callback) {
@@ -30,11 +31,21 @@ function callMsg(e) {
 // callMsg("click", div, callMsg);
 
 
-div1.addEventListener("click", callMsg, { capture: true });
+// div1.addEventListener("click", callMsg, { capture: true });
 
-div2.addEventListener("click", callMsg, { capture: true });
+// div2.addEventListener("click", callMsg, { capture: true });
 
-div3.addEventListener("click", callMsg, { capture: true });
+// div3.addEventListener("click", callMsg, { capture: true });
+
+function globalEventHandler(event, element) {
+    document.addEventListener(event, (e) => {
+        if (e.target === element) {
+            console.log(`Clicked`);
+        }
+    }, { capture: true });
+}
+
+globalEventHandler("click", div3);
 
 
 // function Person(name, age) {

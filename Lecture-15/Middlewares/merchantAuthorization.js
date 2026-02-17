@@ -1,8 +1,7 @@
-// const jwt = require(`jsonwebtoken`);
-// const User = require(`../Models/user.js`);
 const Product = require(`../Models/product.js`);
 
 const checkIfMerchant = (req, res, next) => {
+    // console.log(`Reached Merchant`);
     if (req.user.role === "Merchant") {
         next();
     } else {
@@ -15,8 +14,9 @@ const checkCorrectOwner = async (req, res, next) => {
     // console.log(product.author.toString());
     // console.log(req.user._id);
     // console.log(req.user.toString() == product.author.toString());
+    // console.log(`Reached correct owner`);
     const productId = product.author.toString();
-    if (!Product) {
+    if (!product) {
         return res.send(`<h1>Invalid Product</h1>`);
     }
     if (productId == req.user._id) {
